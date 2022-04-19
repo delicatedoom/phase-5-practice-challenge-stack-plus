@@ -1,17 +1,27 @@
 class StackPlus
+  attr_reader :data
+
   def initialize
-    # your code here
+  
+    @data = []
   end
 
   def push(value)
-    # your code here
+    # Push a value onto the array
+    data.push(value)
   end
 
   def pop
-    # your code here
+  
+    return -1 unless data.size > 0
+
+    data.pop
   end
 
   def increment(n)
-    # your code here
+    [n, data.size].min.times do |i|
+      # increment the value of each element by 1
+      data[i] += 1
+    end
   end
 end
